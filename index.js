@@ -7,24 +7,15 @@ const validatePhone = require('./validatePhone')
 const fs = require('fs').promises;
 const path = require('path');
 
-//const ACCEPTED_ORIGINS = process.env.ACCEPTED_ORIGINS 
-// Middlewares
 app.use(express.json())
-app.use(cors())
-// app.use(cors({
-//     origin: (origin, callback) => {
-  
-//       if (ACCEPTED_ORIGINS?.includes(origin)) {
-//         return callback(null, true)
-//       }
-  
-//       if (!origin) {
-//         return callback(null, true)
-//       }
-  
-//       return callback(new Error('Not allowed by CORS'))
-//     }
-//   }))
+
+const corsOptions = {
+  origin: 'https://your-frontend-domain.com',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
+app.use(cors(corsOptions))
 
 app.disable('x-powered-by')
 
