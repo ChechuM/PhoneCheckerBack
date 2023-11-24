@@ -10,7 +10,7 @@ const path = require('path');
 app.use(express.json())
 
 const corsOptions = {
-  origin: 'https://your-frontend-domain.com',
+  origin: 'https://phonenumberchecker.up.railway.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,
